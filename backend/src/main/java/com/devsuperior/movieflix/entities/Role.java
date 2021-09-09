@@ -1,5 +1,9 @@
 package com.devsuperior.movieflix.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -8,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_role")
 public class Role implements Serializable {
@@ -18,28 +25,9 @@ public class Role implements Serializable {
 	private Long id;
 	private String authority;
 	
-	public Role() {
-	}
-
 	public Role(Long id, String authority) {
 		super();
 		this.id = id;
-		this.authority = authority;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getAuthority() {
-		return authority;
-	}
-
-	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
 

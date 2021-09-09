@@ -7,7 +7,11 @@ import java.util.Set;
 
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class GenreDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -34,22 +38,6 @@ public class GenreDTO implements Serializable {
 		movies.forEach(mov -> this.movies.add(new MovieDTO(mov)));
 	}	
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Set<MovieDTO> getMovies() {
 		return movies;
 	}

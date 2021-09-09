@@ -4,7 +4,13 @@ import javax.validation.constraints.NotBlank;
 
 import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@Getter
+@Setter
 public class ReviewMinDTO {
 
 	private Long id;
@@ -12,9 +18,6 @@ public class ReviewMinDTO {
 	private String text;
 	private Long movieId;
 	private UserDTO user;
-
-	public ReviewMinDTO() {
-	}
 
 	public ReviewMinDTO(Long id, String text, Long movieId) {
 		this.id = id;
@@ -27,37 +30,5 @@ public class ReviewMinDTO {
 		text = entity.getText();
 		movieId = entity.getMovie().getId();
 		this.user = new UserDTO(user);
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	public Long getMovieId() {
-		return movieId;
-	}
-
-	public void setMovieId(Long movieId) {
-		this.movieId = movieId;
-	}
-
-	public UserDTO getUser() {
-		return user;
-	}
-
-	public void setUser(UserDTO user) {
-		this.user = user;
 	}
 }

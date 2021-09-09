@@ -1,4 +1,8 @@
 package com.devsuperior.movieflix.entities;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -10,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_review")
 public class Review implements Serializable {
@@ -30,45 +37,10 @@ public class Review implements Serializable {
 	@Column(columnDefinition = "TEXT")
 	private String text;
 	
-	public Review() {
-	}
-
 	public Review(Long id, Movie movie, User user, String text) {
 		this.id = id;
 		this.movie = movie;
 		this.user = user;
 		this.text = text;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Movie getMovie() {
-		return movie;
-	}
-
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}	
 }
